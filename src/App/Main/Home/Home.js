@@ -5,6 +5,7 @@ import HomeNav from './HomeNav/HomeNav'
 const Home=(props)=>{
     return(
         <>
+      
         <HomeBody/>
         <HomeNav/>
         </>

@@ -13,7 +13,8 @@ const Header =(props)=>{
         <LoginBar/>
         <NavBar/>
         <PublicityContained/>
-        <SearchBarAndBuyCar/>        
+        <SearchBarAndBuyCar/>  
+        {props.children}      
         </>
     )
 }

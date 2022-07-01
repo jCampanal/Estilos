@@ -2,25 +2,31 @@ import React from 'react'
 import { Button } from "@mui/material";
 import { ButtonSX } from './MuiLoginButtonStyled';
 import { useDispatch,useSelector } from "react-redux";
-import { setOpenModal, setContentModal,setTitleModal} from "../../Store/MotionGenerix/ModalGeneric";
-import { selectOpen, selectContent} from "../../Store/MotionGenerix/ModalGeneric";
 import { logout } from "../../Store/auth/authorizationSlice";
-import { selectUserName, selectStatus} from "../../Store/auth/authorizationSlice"
-import LogMenu from '../LogMenu/LogMenu'
+import { selectStatus} from "../../Store/auth/authorizationSlice";
+import { useNavigate } from 'react-router';
+import { setNavOpacity } from '../../Store/NavEffect/NavEffect';
 
 const MuiLoginButton=(props)=>{
     const Login=useSelector(selectStatus)
     const dispatch= useDispatch()
+    const navigate=useNavigate()
 
     const HandlerInitSesion=()=>{
         props.Close()
+        dispatch(setNavOpacity(false))
+
         setTimeout(()=>{
-        dispatch(setTitleModal('Inicio de Sesión'))
-        dispatch(setContentModal(<LogMenu></LogMenu>))
-        setTimeout(()=>{dispatch(setOpenModal(true))},200)},1000)
+            navigate('/Auth')
+        },700)
+
+        setTimeout(()=>{
+            dispatch(setNavOpacity(true))
+        },1200)
         
     }
 
+    
     const HandlerLogout=()=>{
         dispatch(logout())
     }

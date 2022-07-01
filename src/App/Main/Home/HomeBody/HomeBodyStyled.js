@@ -11,7 +11,7 @@ export const H1S = Styled.h1`
 text-align:center;
 margin: 20px 0 5px 0;
 width:90%;
-color: rgba(216, 15, 15, 0.774);
+color: red;
 @media screen and (min-width:400px){
     width:80%;
 }

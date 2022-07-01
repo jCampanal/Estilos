@@ -1,22 +1,30 @@
 import React,{useState,useEffect} from 'react'
 import {ButtonS} from './LoguinButtonStyled'
 import { useDispatch,useSelector } from "react-redux";
-import { setOpenModal, setContentModal,setTitleModal} from "../../Store/MotionGenerix/ModalGeneric";
-import { selectOpen, selectContent} from "../../Store/MotionGenerix/ModalGeneric";
 import { logout } from "../../Store/auth/authorizationSlice";
 import { selectUserName, selectStatus} from "../../Store/auth/authorizationSlice"
-import LogMenu from '../LogMenu/LogMenu'
+import { setNavOpacity } from '../../Store/NavEffect/NavEffect';
 import {setOpenNotification,setContentNotification,setStatusNotification} from '../../Store/NotificationDiv/NotificationDiv'
+import { useNavigate } from 'react-router';
+
 
 const LoguinButton=(props)=>{
     const [logueado, setLogueado]=useState(false)    
-     
+    const navigate=useNavigate() 
+
     const dispatch=useDispatch()
     const Status= useSelector(selectStatus)
     const HandlerInitSesion=()=>{
-        dispatch(setTitleModal('Inicio de Sesión'))
-        dispatch(setContentModal(<LogMenu></LogMenu>))
-        setTimeout(()=>{dispatch(setOpenModal(true))},200)
+        dispatch(setNavOpacity(false))
+
+        setTimeout(()=>{
+            navigate('/Auth')
+        },700)
+
+        setTimeout(()=>{
+            dispatch(setNavOpacity(true))
+        },1200)
+        
         
     }
 

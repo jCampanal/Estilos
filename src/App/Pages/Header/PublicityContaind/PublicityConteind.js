@@ -40,14 +40,14 @@ const PublicityContained=(porps)=>{
     useEffect(()=>{
         
                 const LastCount=count+1===PublicityContainerData.length
-                setTimeout(()=>{setNewImage(PublicityContainerData[LastCount?0:count+1].SRC)},300)
-                setTimeout(()=>{setChange(true)},800)
-                setTimeout(()=>{setVisualImage(PublicityContainerData[LastCount?0:count+1].SRC)},2000)
-                setTimeout(()=>{setChange(false)},2400)
+                setTimeout(()=>{setNewImage(PublicityContainerData[LastCount?0:count+1].SRC)},600)
+                setTimeout(()=>{setChange(true)},1600)
+                setTimeout(()=>{setVisualImage(PublicityContainerData[LastCount?0:count+1].SRC)},4000)
+                setTimeout(()=>{setChange(false)},4800)
                 if(LastCount){
-                    setTimeout(()=>{setCount(0)},7400)
+                    setTimeout(()=>{setCount(0)},14800)
                 }else{
-                    setTimeout(()=>{setCount(count+1)},7400)
+                    setTimeout(()=>{setCount(count+1)},14800)
                 }
                     
        

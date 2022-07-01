@@ -73,7 +73,7 @@ font-family:Decorative;`;
 
 export const H4S=styled.h4`
 text-align:center;
-margin: 5px 30px;`;
+margin: 5px 50px;`;
 
 export const ConteindIcon=styled.div`
 margin-left: 20px;`;

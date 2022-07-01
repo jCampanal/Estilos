@@ -17,8 +17,7 @@ const App=()=> {
   return (
     <ThemeProvider theme={MuiTheme}>
       <MaxContainer>      
-        <WrappedDinamicElement>
-            <Header/> 
+        <WrappedDinamicElement>            
             <EffectBody>   
               <AppRoutes/>          
             </EffectBody> 

@@ -18,11 +18,13 @@ justify-content:center;
 
 const Search =()=>{
     return(
+        <>
         <FirstDiv>
             <H1S>
                 Lo sentimos el servidor no se conecta
             </H1S>
         </FirstDiv>
+        </>
     )
 }
 

@@ -1,17 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import { 
-    ListItemButton,
     ListItem,
-    ListItemIcon,
     Box,
     List,
-    ListItemText,
     Divider,
-    Typography} from '@mui/material'
+} from '@mui/material'
 import {
     ContentMenuDivS,
     CloseMenuDiv,
-    NavDivs,
     Backdrop,
     RegisterDivs,
     H4S,
@@ -79,7 +75,9 @@ const SideMenu=(props)=>{
                             
                             <ListItem button
                                     sx={{justifyContent: "left",
-                                        alignItems:'center',
+                                        alignItems:'space-evenly',
+                                        display:'flex',
+                                        width:'100%'
                                         }}
                                     key={element.Title}
                                     selected={element.HREF === location.pathname}

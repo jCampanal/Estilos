@@ -1,7 +1,8 @@
-import React from 'react' 
+import React,{useState,useRef,useEffect} from 'react' 
 import Styled from 'styled-components' 
 import CategoryHome from '../../../Components/CategoryHome/CategoryHome';
 import {Category} from './HomeNavData'
+
 
 const HomeNavDiv=Styled.div`
 width:100%;
@@ -14,22 +15,29 @@ align-items:center;
 }`;
 
 const HomeNav=(props)=>{
+
+    
+
+
+
     return(
-        <HomeNavDiv>
-            {
+        <HomeNavDiv >{
+            
+                
+             
                 Object.keys(Category).map((categoryName,index)=>{
                     return(
                         <CategoryHome
                             href={Category[categoryName].href}
                             src={Category[categoryName].src}
-                            caption={categoryName}/>
+                            caption={categoryName}
+                            index={index} />
                             
                         
                     )
                 })
 
-            }
-        </HomeNavDiv>
+            }</HomeNavDiv>
     )
 }
 

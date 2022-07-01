@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, useFormContext } from "react-hook-form";
 import Field from '../../../Field/Field';
 import {ContentForm, DivContent,AuthButtonSX,ChangeMenu} from './LogFormStyled'
+import { useNavigate } from 'react-router';
 import { useDispatch,useSelector } from "react-redux";
 import { login } from "../../../../Store/auth/authorizationSlice";
 import { setOpenModal} from "../../../../Store/MotionGenerix/ModalGeneric";
@@ -18,6 +19,8 @@ const defaulFormValues = {
 const LogForm=(props)=>{
   const [TryCreateOrder,setTryCreateOrder]=useState(false)
   const dispatch=useDispatch()
+  const navigate=useNavigate()
+
     const validationRules = yup.object().shape({
         usuario: yup.string().required("campo requerido"),
         codigo: yup.string().required("campo requerido"),
@@ -50,10 +53,11 @@ const LogForm=(props)=>{
             refreshToken: 'kamomsaiomw0iemdksfkms iwe0je02kmksdfklsdf oawe0jw0',
             name: getValues("usuario")
           }))
-          dispatch(setOpenModal(false))
+          
           dispatch(setContentNotification(`Sesión ${getValues("usuario")} inciada `))
           dispatch(setStatusNotification('succ'))
           dispatch(setOpenNotification(true))
+          navigate('/')
         }else{
           dispatch(setContentNotification('contraseña o usuario incorrectos'))
           dispatch(setStatusNotification('fall'))
